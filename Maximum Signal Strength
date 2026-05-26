@@ -1,0 +1,9 @@
+N=int(input())
+arr=list(map(int,input().split(" ")))
+K=int(input())
+window_sum=sum(arr[:K])
+max_sum=window_sum
+for i in range(K,N-1):
+    window_sum +=arr[i]-arr[i-K]
+max_sum=max(window_sum,max_sum)
+print(max_sum)
