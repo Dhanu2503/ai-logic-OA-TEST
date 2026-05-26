@@ -1,0 +1,26 @@
+n = int(input("Enter number: "))
+
+l = []
+
+for i in range(n):
+    a, b = map(int, input().split())
+    l.append([a, b])
+
+l.sort()
+
+print(l)
+
+maxx = [l[0]]
+
+for i in range(1, len(l)):
+
+    x, y = l[i]
+
+    if x <= maxx[-1][1]:
+
+        maxx[-1][1] = max(y, maxx[-1][1])
+
+    else:
+        maxx.append([x, y])
+
+print(maxx)
