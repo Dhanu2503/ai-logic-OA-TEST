@@ -1,0 +1,11 @@
+S=input()
+left=0
+seen=set()
+max_len=len(seen)
+for right in range(len(S)):
+    while S[right] in seen:
+        seen.remove(S[left])
+        left +=1
+    max_len=max(max_len,len(seen))
+    seen.add(S[right])
+print(max_len)
