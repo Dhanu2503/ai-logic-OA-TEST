@@ -6,6 +6,6 @@ for right in range(len(S)):
     while S[right] in seen:
         seen.remove(S[left])
         left +=1
-    max_len=max(max_len,len(seen))
+    max_len=max(max_len,right-left+1)
     seen.add(S[right])
 print(max_len)
